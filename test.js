@@ -1,32 +1,37 @@
-	
-function numbers() {
-	
-	var a,b,c;
-	if(a = prompt('Введите первое число', '')==null){
-		alert("Операция отменена");
-		exit;
-	}
-	if(b = prompt('Введите второе число', '')==null){
-		alert("Операция отменена");
- 		exit;
- 	}
-		if(a <= b) {
-			for (; a <= b; a++) {
-			if (a % 2 > 0) {
-				c += +a;
-			}
-		
-		}} else if (a => b) {
-			for (; b <= a; b++) {
-			if (b % 2 > 0) {
-				c += +b
-			}
-		
-		}}
-alert(c)
+/*for (var a = +prompt("number?", ""), c = a, b = --a; b > 0; b--) {
+	c +=b;
 }
-function func() {
-	alert('Hello world');
-}
+alert(c)*/
 
-numbers()
+/*function sumTo(n) {
+	if (n != 1) {
+		return n + sumTo(n - 1);
+	} else {
+		return n;
+	}
+}
+alert(sumTo(100))*/
+
+//>>>>>>>>>>>>>>>>>>>>>>>Факториал<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+/*for (var a = prompt("number", ""), c = a, b = --a; b > 0; b --) {
+	c *= b;
+}
+alert(c)*/
+
+/*function calcFactorial(n) {
+	if (n != 1) {
+		return n * calcFactorial(n - 1);
+	} else {
+		return n;
+	}
+}
+alert(calcFactorial(5))*/
+
+function fib(n) {
+	if (n > 1) {return fib(n - 1) + fib(n - 2);
+	} else {
+		return n;
+	}
+}
+alert( fib(8) )

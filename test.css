@@ -1,49 +1,20 @@
 .wrapper {
-	width: 202px;
+	width: 800px;
 	margin: 150px 0 0 150px;
+}
+
+button {
 	position: relative;
+	line-height: 40px;
+	background: linear-gradient(olive 10%, lightgreen);
+	font-weight: bold;
+	color: darkred;
+	box-shadow: 0 0 0 2px white, 0 0 2px 5px black, 0 0 1px 10px white, 0 0 2px 15px yellow;
 }
 
-.triangle {
-	margin-top: 49px;
-	left: 0;
+button:hover {
 	position: absolute;
-	width: 0;
-	height: 0;
-	border-bottom: 50px solid transparent;
-	border-top: 50px solid transparent;
-	border-left: 100px solid yellow;
-}
-
-.triangler {
-	margin-top: 49px;
-	position: absolute;
-	right: 0;
-	width: 0;
-	height: 0;
-	border-bottom: 50px solid transparent;
-	border-top: 50px solid transparent;
-	border-right: 100px solid red;
-}
-
-.triangleg {
-	position: absolute;
-	top: 0;
-	left: 50px;
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-top: 100px solid green;
-	border-right: 50px solid transparent;
-}
-
-.trianglem {
-	position: absolute;
-	top: 100px;
-	left: 50px;
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-bottom: 100px solid magenta;
-	border-right: 50px solid transparent;
+	margin: 3px 0 0 3px;
+	color: #000;
+	box-shadow: inset 0 0 0 5px white, 0 0 1px 7px black;
 }
