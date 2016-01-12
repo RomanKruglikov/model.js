@@ -1,54 +1,68 @@
-/*for (var a = +prompt("number?", ""), c = a, b = --a; b > 0; b--) {
-	c +=b;
-}
-alert(c)*/
-//______________________________________________________________
-/*function sumTo(n) {
-	if (n != 1) {
-		return n + sumTo(n - 1);
-	} else {
-		return n;
-	}
-}
-alert(sumTo(100))*/
+"use strict";
 
-//>>>>>>>>>>>>>>>>>>>>>>>Факториал<<<<<<<<<<<<<<<<<<<<<<<<<<
+/*function Clock(options) {
+	this._template = options.template;
+}
 
-/*for (var a = prompt("number", ""), c = a, b = --a; b > 0; b --) {
-	c *= b;
-}
-alert(c)*/
-//_____________________________________________________________
-/*function calcFactorial(n) {
-	if (n != 1) {
-		return n * calcFactorial(n - 1);
-	} else {
-		return n;
-	}
-}
-alert(calcFactorial(5))*/
-//>>>>>>>>>>>>>>>>>>>>ФИБОНАЧИ<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-/*function fib(n) {
-	if (n > 1) {return fib(n - 1) + fib(n - 2);
-	} else {
-		return n;
-	}
-}
-alert( fib(4) )*/
-//___________________________________________________________
+Clock.prototype._render = function() {
+	var date = new Date();
 
-function fib(){
-	var a = +prompt("?", "");
-	if ( a > 3 ) {
-	for (var b = 1, c = 2,d; a > 3; a--) {
-	d = b + c;
-	b = c, c = d;
-}} else if (a === 3) {
-	d = 2;
-} else if (a === 1 || a === 2) {
-	d = 1;
-} else {
-	d = "number incorrect";
+	var hours = date.getHours();
+	if (hours < 10) {
+		hours = '0' + hours;
+	}
+
+	var minutes = date.getMinutes();
+	if (minutes < 10) {
+		minutes = '0' + minutes;
+	}
+
+	var seconds = date.getSeconds();
+	if (seconds < 10) {
+		seconds = '0' + seconds;
+	}
+
+	var output = this._template.replace('h', hours).replace('m', minutes).replace('s', seconds);
+	console.log(output);
+};
+
+Clock.prototype.start = function() {
+	this._render();
+	var self = this;
+
+	this._timerId = setTimeout(function() {
+		self.start();
+	}, 1000);
+};
+
+Clock.prototype.stop = function() {
+	clearInterval(this._timerId);
+};*/
+
+//>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<
+function Menu(state) {
+	this._state = state || STATE_CLOSED;
 }
-alert("**_" + d  + "_**");
-}
+
+Menu.prototype.STATE_CLOSED = 0;
+Menu.prototype.STATE_OPEN = 1;
+
+Menu.prototype.open = function() {
+	this._state = STATE_OPEN;
+};
+
+Menu.prototype.close = function() {
+	this._state = STATE_CLOSED;
+};
+
+Menu.prototype._stateAsString = function() {
+	if (this.STATE_OPEN) {
+		return 'Открыто';
+	} else {
+		return 'Закрыто';
+	}
+};
+
+Menu.prototype.showState = function() {
+	alert(_stateAsString());
+};
